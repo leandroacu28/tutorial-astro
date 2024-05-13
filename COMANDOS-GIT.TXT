@@ -1,0 +1,60 @@
+LIBRO DE GIT https://git-scm.com/book/es/v2
+
+> 3 ESTADOS (Working Directory> Stagings Area>Repository)
+
+>Con git add cambiamos de working directory a stagings area
+>Con git commit cambiamos de stagings area a repository
+
+####COMANDOS BASICOS#####
+>Iniciar un nuevo proyecto
+git init 
+
+> VER QUE ARCHIVOS ESTAMOS TRABAJANDO (NO ESTAN EN STAGING AREA)
+git status
+
+>AGREAR ARCHIVOS AL STAGINGS AREA  DE FORMA INDIVIDUAL O GRUPAL
+git add <nombre del archivo> o git add .
+
+>CREAR NUESTRO PRIMER SNAPSHOT O PUNTO DE PARTIDA
+>DEBES CONFIGURARLO PARA DECIRLE QUIEN ES EL QUE ESTA HACIENDO LOS CAMBIOS
+git config --global user.email "contact@example.com"
+git config --global user.name "Tu Nombre"
+
+git commit -m "Mi primer commit"
+
+>VER TODOS LOS COMMITS CREADOS: DEVUELVE 1 HASH DEL COMMIT,EL AUTOR,EMAIL, LA FECHA DE CREACION Y EL MENSAJE
+git log
+
+> METODO PARA RETROCEDER LOS CAMBIOS REALIZADOS
+git checkout -- <nombre del archivo>
+
+>VER LAS DIFERENCIAS ENTRE UN ARHIVO MODIFICADO QUE ESTA EN ESTADO WORK-Directory
+git diff <nombre del archivo>
+
+>IGNORAR CAMBIOS DE CARPETAS Y ARCHIVOS
+Crear un archivos .gitignore en el cual voy a colocar todos los arhivos y directorios que se van a IGNORAR
+Dentro del archivos escribir los nombre de los arhivos
+
+>MOSTRAR LA RAMA PRINCIPAL DEL PROYECTO
+git branch
+
+>TENER UNA VERSION ALTERNATIVA DEL CODIGO, SUPONGAMOS QUE TIENE UN LOGIN nuevo
+git branch <nombre de la version alternativa>
+git branch login
+
+>MOVERME A LA RAMA LOGIN
+git checkout login
+
+>SI NOS CAMBIAMOS A LA RAMA MASTER, LOS ARCHIVOS COMMITEADOS EN LA RAMA LOGGIN DESAPARECEN
+
+##COMANDOS PARA TRABAJAR CON GITHUBS
+>CREAR UN NUEVO REPOSITORIO QUE CONTIENE LOS ARCHIVOS DE TU PROYECTO
+>CUANDO LO CREAMOS GITHUBS NOS DEVUELVE UNA URL DEL REPOSITORIO PARA ALOJAR EL CODIGO
+git remote add oring <url del depositorio de githuub>
+
+git remote  add oring https://www.github.com/leandro/test 
+gt push -u oring master
+
+>RECUPERAR UN PROYECTO DESDE GITHUBS
+git clone <url del repositorio de githubs>
+git clone https://www.github.com/leandro/test 
