@@ -53,7 +53,7 @@ git checkout login
 git remote add oring <url del depositorio de githuub>
 
 git remote  add oring https://www.github.com/leandro/test 
-gt push -u oring master
+git push -u oring master
 
 >RECUPERAR UN PROYECTO DESDE GITHUBS
 git clone <url del repositorio de githubs>
