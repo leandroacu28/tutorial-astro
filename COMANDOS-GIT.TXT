@@ -55,6 +55,11 @@ git remote add oring <url del depositorio de githuub>
 git remote  add oring https://www.github.com/leandro/test 
 git push -u oring master
 
+>traer solos los cambios UN PROYECTO DESDE GITHUBS
+git pull <url del repositorio de githubs>
+git pull https://www.github.com/leandro/test 
+
+
 >RECUPERAR UN PROYECTO DESDE GITHUBS
 git clone <url del repositorio de githubs>
 git clone https://www.github.com/leandro/test 
