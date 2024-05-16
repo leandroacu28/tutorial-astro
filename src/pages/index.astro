@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 
@@ -17,10 +17,8 @@ const astroTitle:string='Astro';
 		<title>{astroTitle}</title>
 	</head>
 	<body>
+		<Header></Header>
 		<h1>My {astroTitle} Site</h1>
-
-		<Navigation></Navigation>
-
 		<Footer></Footer>
 	</body>
 
