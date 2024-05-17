@@ -1,37 +1,24 @@
 ---
 import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 const blogTitle:string="Blog-Astro"
+
+console.log(blogTitle)
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>^{blogTitle}</title>
-  </head>
-  <body>
-    <Navigation></Navigation>
-
-    <h1>My Astro Learning Blog</h1>
+<BaseLayout pageTitle={blogTitle}>
     <p>This is where I will post about my journey learning Astro.</p>
     <ul>
-        <li>
-            <a href="/post/post-1">POST-1</a>
-        </li>
-
-        <li>
-            <a href="/post/post-2">POST-2</a>
-        </li>
-
-        <li>
-            <a href="/post/post-3">POST-3</a>
-        </li>
+      <li>
+        <a href="/post/post-1">POST-1</a>
+      </li>
+      
+      <li>
+        <a href="/post/post-2">POST-2</a>
+      </li>
+      
+      <li>
+        <a href="/post/post-3">POST-3</a>
+      </li>
     </ul>
-    <Footer></Footer>
-  </body>
-</html>
+  </BaseLayout>
