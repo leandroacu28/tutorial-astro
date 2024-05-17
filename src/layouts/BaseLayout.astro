@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 
-const astroTitle:string='Astro';
+const {pageTitle}=Astro.props
 ---
 
 
@@ -14,11 +14,12 @@ const astroTitle:string='Astro';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{astroTitle}</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <Header></Header>
-		<h1>My {astroTitle} Site</h1>
+		<h1>My {pageTitle} Site</h1>
+		<!-- Con el contenido Slot agrego todas las lineas del codigo del archivo importado -->
         <slot></slot>
 		<Footer></Footer>
 		
