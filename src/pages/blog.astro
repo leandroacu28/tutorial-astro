@@ -1,7 +1,11 @@
 ---
 import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
-const blogTitle:string="Blog-Astro"
+import BlogPost from '../components/BlogPost.astro';
+
+const allPost = await Astro.glob('../pages/post/*.md');
+
+const blogTitle:string="Blog-Astro";
 
 console.log(blogTitle)
 ---
@@ -9,16 +13,14 @@ console.log(blogTitle)
 <BaseLayout pageTitle={blogTitle}>
     <p>This is where I will post about my journey learning Astro.</p>
     <ul>
-      <li>
-        <a href="/post/post-1">POST-1</a>
-      </li>
-      
-      <li>
-        <a href="/post/post-2">POST-2</a>
-      </li>
-      
-      <li>
-        <a href="/post/post-3">POST-3</a>
-      </li>
+      <!-- <li><a href="/post/post-1">POST-1</a></li>
+      <li><a href="/post/post-2">POST-2</a></li>
+      <li> <a href="/post/post-3">POST-3</a></li> -->
+      {allPost.map((post) => <li><a href={post.url}>{post.frontmatter.title} </a></li>)}
     </ul>
+
+    <ul>
+      {allPost.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+    </ul>
+    
   </BaseLayout>
